@@ -21,6 +21,7 @@ class Server {
   }
 
   routes() {
+    // TODO: buscar el tipo de dato para req y res
     this.app.get('/api', (req: any, res: any) => {
       res.json({
         msg: 'GET API',
