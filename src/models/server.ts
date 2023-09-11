@@ -1,11 +1,15 @@
 import  express, {Express} from 'express';
 const cors = require('cors')
 class Server {
+  
   app: Express;
   port: string | undefined;
+  usersPath: string;
+
   constructor () {
     this.app = express();
     this.port = process.env.PORT;
+    this.usersPath = '/api/users';
 
     // Middlewares
     this.middlewares();
@@ -21,33 +25,7 @@ class Server {
   }
 
   routes() {
-    // TODO: buscar el tipo de dato para req y res 
-    this.app.get('/api', (req: any, res: any) => {
-      res.json({
-        msg: 'GET API',
-      })
-    })
-    
-    // TODO: buscar el tipo de dato para req y res 
-    this.app.put('/api', (req: any, res: any) => {
-      res.status(400).json({
-        msg: 'PUT API',
-      })
-    })
-
-    // TODO: buscar el tipo de dato para req y res 
-    this.app.post('/api', (req: any, res: any) => {
-      res.status(201).json({
-        msg: 'POST API',
-      })
-    })
-    
-    // TODO: buscar el tipo de dato para req y res 
-    this.app.delete('/api', (req: any, res: any) => {
-      res.json({
-        msg: 'DELETE API',
-      })
-    })
+    this.app.use( this.usersPath, require('../routes/user.routes'));
   }
   
   listen(){
