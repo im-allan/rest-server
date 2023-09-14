@@ -7,6 +7,13 @@ const usersGet = (req: Request, res: Response) => {
   })
 }
 
+const usersPost = (req: Request, res:  Response) => {
+  res.status(201).json({
+    msg: 'POST API - Controller',
+  })
+}
+
 module.exports = {
   usersGet,
+  usersPost
 }
