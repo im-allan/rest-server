@@ -19,8 +19,15 @@ const usersPut = (req: Request, res: Response) => {
   })
 }
 
+const usersPatch = (req: Request, res: Response) => {
+  res.status(200).json({
+    msg: 'PATCH API - Controller',
+  })
+}
+
 module.exports = {
   usersGet,
   usersPost,
   usersPut,
+  usersPatch
 }
