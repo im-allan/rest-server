@@ -25,9 +25,16 @@ const usersPatch = (req: Request, res: Response) => {
   })
 }
 
+const usersDelete = (req: Request, res: Response) => {
+  res.json({
+    msg: 'DELETE API - Controller',
+  })
+}
+
 module.exports = {
   usersGet,
   usersPost,
   usersPut,
-  usersPatch
+  usersPatch,
+  usersDelete
 }
