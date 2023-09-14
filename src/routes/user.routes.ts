@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { usersGet } = require('../controllers/users.controllers');
+const { usersGet, usersPost } = require('../controllers/users.controllers');
 
 const router = Router();
 
@@ -7,11 +7,7 @@ module.exports = router;
 
 router.get('/', usersGet)
 
-router.post('/', (req: any, res: any) => {
-  res.status(201).json({
-    msg: 'POST API',
-  })
-})
+router.post('/', usersPost)
 
 router.put('/', (req: any, res: any) => {
   res.status(400).json({
