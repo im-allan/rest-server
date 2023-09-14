@@ -14,7 +14,7 @@ const usersPost = (req: Request, res:  Response) => {
 }
 
 const usersPut = (req: Request, res: Response) => {
-  res.status(400).json({
+  res.status(200).json({
     msg: 'PUT API - Controller',
   })
 }
