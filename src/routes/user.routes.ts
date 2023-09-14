@@ -1,14 +1,12 @@
 const { Router } = require('express');
+const { usersGet } = require('../controllers/users.controllers');
+
 const router = Router();
 
 module.exports = router;
 
 // TODO: buscar el tipo de dato para req y res 
-router.get('/', (req: any, res: any) => {
-  res.json({
-    msg: 'GET API',
-  })
-})
+router.get('/', usersGet)
 
 // TODO: buscar el tipo de dato para req y res 
 router.put('/', (req: any, res: any) => {
