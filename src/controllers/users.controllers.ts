@@ -13,7 +13,14 @@ const usersPost = (req: Request, res:  Response) => {
   })
 }
 
+const usersPut = (req: Request, res: Response) => {
+  res.status(400).json({
+    msg: 'PUT API - Controller',
+  })
+}
+
 module.exports = {
   usersGet,
-  usersPost
+  usersPost,
+  usersPut,
 }
