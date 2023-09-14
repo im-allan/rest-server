@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { usersGet, usersPost } = require('../controllers/users.controllers');
+const { usersGet, usersPost, usersPut } = require('../controllers/users.controllers');
 
 const router = Router();
 
@@ -9,11 +9,7 @@ router.get('/', usersGet)
 
 router.post('/', usersPost)
 
-router.put('/', (req: any, res: any) => {
-  res.status(400).json({
-    msg: 'PUT API',
-  })
-})
+router.put('/', usersPut)
 
 router.patch('/', (req: any, res: any) => {
   res.status(200).json({
